@@ -1,1 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --font-nunito: 'Nunito', sans-serif;
+    --font-varela: 'Varela Round', sans-serif;
+    --color-Taupe: #AD8B73;
+    --color-lightTaupe: #CEAB93;
+    --color-darkTaupe: #7D5A50;
+}
