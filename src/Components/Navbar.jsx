@@ -6,8 +6,8 @@ import { MdOutlineClose } from "react-icons/md";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
-        <nav className="">
-            <div className="flex items-center justify-between p-6 md:pl-12 md:pr-12">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-white/75 backdrop-blur-md shadow-md">
+            <div className="flex items-center justify-between p-4 md:pl-12 md:pr-12">
                 <a href="/" className="font-varela text-4xl text-darkTaupe">
                   Dot.
                 </a>
