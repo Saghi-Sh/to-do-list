@@ -1,6 +1,9 @@
-import { useState } from 'react'
-import Navbar from "./Components/Navbar";
+// App.jsx
+import React, { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
 
 
 export default function App() {
@@ -13,9 +16,26 @@ export default function App() {
     setNewTask("");
   };
 
-  return (
-    <div >
-      <Home />
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      children: [
+        {
+          index: true,
+          element: (
+            <Home
+              tasks={tasks}
+              newTask={newTask}
+              setNewTask={setNewTask}
+              addTask={addTask}
+            />
+          ),
+        },
+        { path: "signup", element: <Signup /> },
+        { path: "login", element: <Login /> },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }

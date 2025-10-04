@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { MdOutlineClose } from "react-icons/md";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-white/75 backdrop-blur-md shadow-md">
             <div className="flex items-center justify-between p-4 md:pl-12 md:pr-12">
@@ -29,7 +31,9 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <button className="px-4 py-2 bg-Taupe text-white rounded hover:bg-lightTaupe font-medium">
+                    <button 
+                    onClick={() => navigate("/signup")} 
+                    className="px-4 py-2 bg-Taupe text-white rounded hover:bg-lightTaupe font-medium">
                       Sign Up
                     </button>
                   </li>

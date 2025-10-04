@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import todoimg from "../photos/home-page.jpg";
 import mobileimg from "../photos/mobile-app.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -13,6 +14,7 @@ export default function Home() {
   // Mobile: fade in & move up faster (center of viewport ~200px)
   const mobileOpacity = useTransform(scrollY, [50, 200], [0, 1]);
   const mobileY = useTransform(scrollY, [50, 200], [50, 0]);
+  const navigate = useNavigate();
 
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
@@ -103,6 +105,7 @@ export default function Home() {
           </p>
           <button
             type="button"
+            onClick={() => navigate("/signup")}
             className="px-8 py-4 rounded-lg bg-Taupe text-white font-semibold shadow-md hover:bg-lightTaupe transition"
           >
             Sign Up Free
